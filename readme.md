@@ -1,4 +1,4 @@
-Push Notification Sample App
+Push Notification For Mobile Application
 ============================
 A sample mobile application built with [Ionic](http://ionicframework.com) and [ngCordova](http://ngcordova.com/) to demonstrate how to register for and receive push notifications on iOS
 and Android. Once the device registration token is received, it is sent to a locally running node service where it will be stored for 
@@ -92,23 +92,6 @@ instance.
   
   `$ node subscribe.js`
 
-
-####Resources - HIGHLY RECOMMENDED REFERENCES
-
-The answers to your questions about [Apple Push Notifications](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW9) and [Google Cloud Messaging](http://developer.android.com/google/gcm/gs.html) configuration can be found in my previous 
-posts. If you're not familiar with the setup, you will save yourself headache at least reading thru the configuration portion
-for each. You will need certain resources from them and have to specifically enable your iOS for Push Notifications thru the Apple
-Developer site. 
-
-1-[Very explanatory post](http://blogs.telerik.com/appbuilder/posts/14-01-14/let's-get-push-notifications-working-in-phonegap-and-ios?utm_content=buffer751c3&utm_medium=social&utm_source=app.net&utm_campaign=buffer) with screenshots 
-by [Burke Holland](https://twitter.com/burkeholland) to walk you through Apple Push Notification setup. 
-
-2-[My tutorial on iOS/Apple Push Notifications](http://devgirl.org/2012/10/19/tutorial-apple-push-notifications-with-phonegap-part-1/)  
-
-3-[My tutorial on Android/GCM](http://devgirl.org/2012/10/25/tutorial-android-push-notifications-with-phonegap/)
-
-4-[My PushPlugin Basic Tutorial](http://devgirl.org/2013/07/17/tutorial-implement-push-notifications-in-your-phonegap-application/)
-
 ###More about ngCordova
 `ngCordova` is an AngularJS wrapper library for working with Cordova plugins. It's essentially a set of AngularJS directives
 to help keep your plugin code clean, organized and more maintainable. I've included the library already in the /lib folder
@@ -159,11 +142,6 @@ Google notes that 'When users uninstall an application, it is not automatically 
 At that point, your server should mark the device as unregistered (the server will receive a NotRegistered error).'
 
 See [this link](http://developer.android.com/google/gcm/adv.html) for advanced concepts and other useful information surrounding this. 
-
-**Apple's Feedback Service**
-APNs provides a useful [Feedback Service](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/CommunicatingWIthAPS.html#//apple_ref/doc/uid/TP40008194-CH101-SW3) 
-that can be queried to find any device tokens that are no longer valid, for instance if the user deleted your app from their device. Apple recommends
-you query the service once per day to find any invalid tokens and remove them from your own database to reduce unnecessary message overhead and improve overall system performance. 
 
 The [pushserver](https://www.npmjs.org/package/node-pushserver) library also has an interface built into it for accessing this service 
 that you can take advantage of. It is also configured via the config.json file. If a device token is found to be invalid, it should be
